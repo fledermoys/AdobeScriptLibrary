@@ -1,8 +1,17 @@
+//created by Max Grünwald
+//LinkedIn: https://www.linkedin.com/in/max-grünwald-437692225/
+//Behance: https://www.behance.net/maxgr
+
+// This script will extract all unique expressions from your After Effects project and save them in a .jsx file next to your project file.
+// Each expression will be preceded by a comment block indicating the layer, comp, project, and property it came from.
+// If the property is an effect, the effect name will also be included in the comment block.
+// This script is useful for documenting expressions or sharing them with others.
+
+
 var project = app.project;
 if (!project) {
     alert("No project open.");
 } else {
-    // Use project file name if available.
     var projectName = project.file ? project.file.name : "untitled project";
     var expressions = {}; // key: expression, value: array of metadata objects
     var projectPath = project.file ? project.file.path : Folder.myDocuments.fsName;
